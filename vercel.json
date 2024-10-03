@@ -13,7 +13,7 @@
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "true",
-        "APP_URL": "https://your.url.from.vercel.app",
+        "APP_URL": "https://dotlist.vercel.app",
         "APP_KEY": "base64:PLoHDA+Zv3Yw6v1tUoJ4sWCbE/LuNr5ycUG/vO8d1RY=",
 
         "APP_CONFIG_CACHE": "/tmp/config.php",
