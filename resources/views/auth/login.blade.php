@@ -75,7 +75,7 @@
             <h1>Welcome Back Friend</h1>
             <p>A powerful to-do list app for staying organized and boosting your productivity.</p>
         </div>
-        <img src="img/curved-images/curved-11.jpg" alt="">
+        <img src="https://dotlist.vercel.app/img/curved-images/curved-11.jpg" alt="">
     </div>
 </section>
 @endsection

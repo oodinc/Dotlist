@@ -215,7 +215,7 @@ class TaskController extends Controller
             ->orderBy('due_date')
             ->get();
 
-        return view('tasks.index', compact('tasks', 'completed', 'overdueTasks'));
+        return view('https://dotlist.vercel.app/tasks.index', compact('tasks', 'completed', 'overdueTasks'));
     } 
 
     public function priority()

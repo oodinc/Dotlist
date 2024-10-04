@@ -7,6 +7,14 @@
     },
     "routes": [
         {
+            "src": "/js/(.*)",
+            "dest": "/public/js/"
+        },
+        {
+            "src": "/css/(.*)",
+            "dest": "/public/css/"
+        },
+        {
             "src": "/img/(.*)",
             "dest": "/public/img/"
         },
@@ -27,7 +35,13 @@
         "VIEW_COMPILED_PATH": "/tmp",
         "CACHE_DRIVER": "array",
         "LOG_CHANNEL": "stderr",
-        "SESSION_DRIVER": "cookie"
+        "SESSION_DRIVER": "cookie",
+        "DB_CONNECTION": "mysql",
+        "DB_HOST": "p0n.h.filess.io",
+        "DB_PORT": "3306",
+        "DB_DATABASE": "dbDotlist_stovesharp",
+        "DB_USERNAME": "dbDotlist_stovesharp",
+        "DB_PASSWORD": "9af941ce8b29d6d7db29eec4b2c5c7f4225b62c0"
     },
     "outputDirectory": "public"
 }
