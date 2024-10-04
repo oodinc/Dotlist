@@ -1,0 +1,23 @@
+<?php
+return [
+    'Task History' => 'Riwayat Tugas', 
+    'No upcoming tasks' => 'Tidak ada tugas yang akan datang.',
+    'task' => 'Tugas',
+    'priority' => 'Prioritas',
+    'status' => 'Status',
+    'due_date' => 'Tenggat Waktu',
+    'action' => 'Aksi',
+    'Completed' => 'Selesai',
+    'Not Completed' => 'Tidak Selesai',
+    'View' => 'Lihat',
+    'Edit' => 'Sunting',
+    'Delete' => 'Hapus',
+    'High' => 'Tinggi',
+    'Medium' => 'Menengah',
+    'Low' => 'Rendah',
+    'This page displays tasks that are scheduled for tomorrow and beyond' => 'Halaman ini menampilkan tugas-tugas yang dijadwalkan untuk besok dan seterusnya.',
+    'Are you sure you want to delete task' => 'Apakah Anda yakin ingin menghapus tugas',
+    'This section displays tasks that were completed today' => 'Bagian ini menampilkan tugas yang telah diselesaikan hari ini.',
+    'This section displays tasks that are due today' => 'Bagian ini menampilkan tugas-tugas yang harus diselesaikan hari ini.',
+    'This section displays tasks that were not completed and have passed their due date' => 'Bagian ini menampilkan tugas-tugas yang belum selesai dan telah melewati batas waktunya.',
+];
