@@ -35,7 +35,12 @@
         "VIEW_COMPILED_PATH": "/tmp",
         "CACHE_DRIVER": "array",
         "LOG_CHANNEL": "stderr",
-        "SESSION_DRIVER": "cookie"
+        "SESSION_DRIVER": "cookie",
+        "DB_CONNECTION": "mysql",
+        "DB_HOST": "p0n.h.filess.io",
+        "DB_PORT": "3306",
+        "DB_DATABASE": "dbDotlist_stovesharp",
+        "DB_USERNAME": "dbDotlist_stovesharp"
     },
     "outputDirectory": "public"
 }

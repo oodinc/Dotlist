@@ -50,13 +50,13 @@
                     <div class="row">
                         <div class="col-md-6 pe-md-2 p-0 order-2 order-md-1">
                             <a href="#" id="account" class="btn btn-light d-flex align-items-center justify-content-center mb-2">
-                                <img src="https://dotlist.vercel.app/img/logo/facebook-logo.png" alt="Facebook Logo" style="height: 20px; width: auto;" class="me-2">
+                                <img src="{{ asset('img/logo/facebook-logo.png') }}" alt="Facebook Logo" style="height: 20px; width: auto;" class="me-2">
                                 <span>Facebook</span>
                             </a>
                         </div>
                         <div class="col-md-6 ps-md-2 p-0 order-1 order-md-2">
                             <a href="{{ route('google.auth') }}" id="account" class="btn btn-light d-flex align-items-center justify-content-center mb-2">
-                                <img src="https://dotlist.vercel.app/img/logo/google-logo.png" alt="Google Logo" style="height: 20px; width: auto;" class="me-2">
+                                <img src="{{ asset('img/logo/google-logo.png') }}" alt="Google Logo" style="height: 20px; width: auto;" class="me-2">
                                 <span>Google</span>
                             </a>
                         </div>
@@ -75,7 +75,7 @@
             <h1>Welcome Back Friend</h1>
             <p>A powerful to-do list app for staying organized and boosting your productivity.</p>
         </div>
-        <img src="https://dotlist.vercel.app/img/curved-images/curved-11.jpg" alt="">
+        <img src="img/curved-images/curved-11.jpg" alt="">
     </div>
 </section>
 @endsection
