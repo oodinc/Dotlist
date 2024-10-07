@@ -49,7 +49,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 pe-md-2 p-0 order-2 order-md-1">
-                            <a href="#" id="account" class="btn btn-light d-flex align-items-center justify-content-center mb-2">
+                            <a href="{{ route('facebook.auth') }}" id="account" class="btn btn-light d-flex align-items-center justify-content-center mb-2">
                                 <img src="{{ asset('img/logo/facebook-logo.png') }}" alt="Facebook Logo" style="height: 20px; width: auto;" class="me-2">
                                 <span>Facebook</span>
                             </a>

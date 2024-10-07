@@ -8,6 +8,7 @@ use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\GoogleAuthController;
+use App\Http\Controllers\Auth\FacebookAuthController;
 
 Route::get('/', [TaskController::class, 'index'])->name('tasks.index')->middleware('auth');
 
@@ -18,6 +19,8 @@ Route::post('/register', [RegisterController::class, 'register'])->name('registe
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/auth/google', [GoogleAuthController::class, 'redirectToGoogle'])->name('google.auth');
 Route::get('/auth/google/callback', [GoogleAuthController::class, 'handleGoogleCallback']);
+Route::get('auth/facebook', [FacebookAuthController::class, 'redirectToFacebook']);
+Route::get('auth/facebook/callback', [FacebookAuthController::class, 'handleFacebookCallback']);
 
 Route::get('/profile', [ProfileController::class, 'show'])->name('profile')->middleware('auth');
 Route::put('/profile', [ProfileController::class, 'update'])->name('profile.update')->middleware('auth');
