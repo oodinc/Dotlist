@@ -1,5 +1,5 @@
-# To-Do List
-Aplikasi To-Do List yang dibuat dengan menggunakan framework Laravel. Aplikasi ini memungkinkan pengguna untuk membuat daftar tugas dengan mudah dan melacak status setiap tugas.
+# Dotlist (To-Do List)
+Aplikasi Dotlist yang dibuat dengan menggunakan framework Laravel. Aplikasi ini memungkinkan pengguna untuk membuat daftar tugas dengan mudah dan melacak status setiap tugas.
 
 ## Fitur
 - Tambahkan tugas baru dan berikan judul pada tugas tersebut
@@ -24,4 +24,3 @@ Kami sangat terbuka untuk kontribusi dari siapa saja. Jika Anda menemukan bug at
 Jika ada pertanyaan atau masalah terkait dengan To-Do List, bisa menghubungi melalui:
 - Instagram: [@m_saifuddin711](https://www.instagram.com/direct/t/340282366841710300949128165706432124526).
 - Email: [masoodinc1@gmail.com](mailto:masoodinc1@gmail.com).
-# Dotlist
