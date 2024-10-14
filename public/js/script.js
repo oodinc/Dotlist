@@ -55,6 +55,18 @@ menuItems.forEach(item => {
     }
 });
 
+// search toggle 
+function toggleSearchInput() {
+    const overlay = document.getElementById('searchOverlay');
+    if (overlay.classList.contains('d-none')) {
+        overlay.classList.remove('d-none');
+        const searchInput = overlay.querySelector('.form-control');
+        searchInput.focus(); 
+    } else {
+        overlay.classList.add('d-none');
+    }
+}
+
 // icon swicth theme
 const themeSwitch = document.querySelector("#themeSwitch");
 const themeIcon = document.querySelector("#themeIcon");
@@ -135,6 +147,19 @@ setThemeBasedOnPage();
 
     setTheme(getPreferredTheme());
 })();
+
+// Language dropdown
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("languageDropdown").addEventListener("mouseenter", function () {
+        this.classList.add("show");
+        this.querySelector(".dropdown-menu").classList.add("show");
+    });
+
+    document.getElementById("languageDropdown").addEventListener("mouseleave", function () {
+        this.classList.remove("show");
+        this.querySelector(".dropdown-menu").classList.remove("show");
+    });
+});
 
 // toggle password
 function togglePasswordVisibility() {

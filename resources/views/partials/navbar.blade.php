@@ -13,11 +13,19 @@
             <li class="nav-item">
                 <form class="d-flex search-form" action="{{ route('tasks.search') }}" method="GET">
                     <div class="input-group" style="margin-top: 3px; margin-right: 3px;">
-                        <input class="form-control border-dark-subtle rounded-start search-input" type="search" name="query" placeholder="@lang('navbar.Search tasks')" aria-label="Search" required>
-                        <button class="btn border-dark-subtle rounded-end search-button" type="submit" data-bs-toggle="tooltip" data-bs-placement="bottom" title="@lang('navbar.Search')"><i class="bi bi-search"></i></button>
+                        <input class="form-control border-dark-subtle rounded-start search-input d-none d-md-block" type="search" name="query" placeholder="@lang('navbar.Search tasks')" aria-label="Search" required>
+                        <button class="btn border-dark-subtle rounded-end d-none d-md-inline-block search-button" type="submit" data-bs-toggle="tooltip" data-bs-placement="bottom" title="@lang('navbar.Search')">
+                            <i class="bi bi-search"></i>
+                        </button>
+                        <div class="d-flex justify-content-end w-100 d-md-none">
+                            <button type="button" class="btn border-dark-subtle rounded search-button" onclick="toggleSearchInput()" data-bs-toggle="tooltip" data-bs-placement="bottom" title="@lang('navbar.Search')">
+                                <i class="bi bi-search"></i>
+                            </button>
+                        </div>
                     </div>
                 </form>
-            </li>
+            </li>            
+            
             @endif
             @if(Request::is('profile'))
             <li class="nav-item">
@@ -74,17 +82,17 @@
             @endguest
         </ul>
     </div>
+
+    <div id="searchOverlay" class="search-overlay d-none">
+        <form class="d-flex align-items-center search-form" action="{{ route('tasks.search') }}" method="GET">
+            <div class="input-group">
+                <input class="form-control border-dark-subtle rounded-start" type="search" name="query" placeholder="@lang('navbar.Search tasks')" aria-label="Search" required autofocus>
+                <button class="btn border-dark-subtle rounded-end" type="submit" data-bs-toggle="tooltip" data-bs-placement="bottom" title="@lang('navbar.Search')">
+                    <i class="bi bi-search"></i>
+                </button>
+            </div>
+            <button type="button" class="btn btn-close ms-2" onclick="toggleSearchInput()" aria-label="Close"></button>
+        </form>
+    </div>
+    
 </nav>
-
-<script>
-    // JavaScript to open language dropdown on hover
-    document.getElementById("languageDropdown").addEventListener("mouseenter", function () {
-        this.classList.add("show");
-        this.querySelector(".dropdown-menu").classList.add("show");
-    });
-
-    document.getElementById("languageDropdown").addEventListener("mouseleave", function () {
-        this.classList.remove("show");
-        this.querySelector(".dropdown-menu").classList.remove("show");
-    });
-</script>
