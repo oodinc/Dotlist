@@ -13,7 +13,7 @@ Aplikasi Dotlist yang dibuat dengan menggunakan framework Laravel. Aplikasi ini 
 - Bootstrap 5.3.0-alpha3
 
 ## Cara Menggunakan
-- Clone repositori ini ke lokal Anda dengan perintah git clone https://github.com/oodinc/To-Do-List.git
+- Clone repositori ini ke lokal Anda dengan perintah `git clone https://github.com/oodinc/Dotlist.git`
 - Jalankan perintah composer install untuk menginstal dependensi aplikasi
 - Jalankan aplikasi dengan perintah php artisan serve dan buka http://localhost:8000 pada browser Anda
 
