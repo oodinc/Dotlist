@@ -87,7 +87,7 @@
         <form class="d-flex align-items-center search-form" action="{{ route('tasks.search') }}" method="GET">
             <div class="input-group">
                 <input class="form-control border-dark-subtle rounded-start" type="search" name="query" placeholder="@lang('navbar.Search tasks')" aria-label="Search" required autofocus>
-                <button class="btn border-dark-subtle rounded-end" type="submit" data-bs-toggle="tooltip" data-bs-placement="bottom" title="@lang('navbar.Search')">
+                <button class="btn btn-secondary border-dark-subtle rounded-end" type="submit" data-bs-toggle="tooltip" data-bs-placement="bottom" title="@lang('navbar.Search')">
                     <i class="bi bi-search"></i>
                 </button>
             </div>
