@@ -1,0 +1,23 @@
+<?php
+return [
+    'Upcoming-Day Tasks' => 'Tareas del Día Siguiente',
+    'No upcoming tasks' => 'No hay tareas próximas.',
+    'task' => 'Tarea',
+    'priority' => 'Prioridad',
+    'status' => 'Estado',
+    'due_date' => 'Fecha de Vencimiento',
+    'action' => 'Acción',
+    'Completed' => 'Completado',
+    'Not Completed' => 'No Completado',
+    'View' => 'Ver',
+    'Edit' => 'Editar',
+    'Delete' => 'Eliminar',
+    'High' => 'Alta',
+    'Medium' => 'Media',
+    'Low' => 'Baja',
+    'This page displays tasks that are scheduled for tomorrow and beyond' => 'Esta página muestra las tareas programadas para mañana y más allá.',
+    'Are you sure you want to delete task' => '¿Está seguro de que desea eliminar la tarea?',
+    'This section displays tasks that were completed today' => 'Esta sección muestra las tareas que se completaron hoy.',
+    'This section displays tasks that are due today' => 'Esta sección muestra las tareas que vencen hoy.',
+    'This section displays tasks that were not completed and have passed their due date' => 'Esta sección muestra las tareas que no se completaron y que han pasado su fecha de vencimiento.',
+];

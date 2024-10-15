@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
 * {
   padding: 0%;
   margin: 0%;
@@ -41,10 +42,12 @@
   padding: 15px;
 }
 
-.navbar .form-switch, .from-check {
+.navbar .form-switch,
+.from-check {
   padding-left: 0;
   margin: 0;
 }
+
 .navbar .form-check .form-check-input {
   float: none;
   margin-left: 0px;
@@ -71,6 +74,26 @@
 
 .navbar .search-overlay.d-none {
   display: none;
+}
+
+.navbar .dropdown-menu li {
+  position: relative;
+}
+
+.navbar .dropdown-menu .dropdown-submenu {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: -7px;
+}
+
+.navbar .dropdown-menu .dropdown-submenu-left {
+  right: 100%;
+  left: auto;
+}
+
+.navbar .dropdown-menu>li:hover>.dropdown-submenu {
+  display: block;
 }
 
 .sidebar {
@@ -716,6 +739,7 @@ section.register .contentBx .formBx .inputBx .input-group {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(360deg);
   }
@@ -741,7 +765,7 @@ section.register .contentBx .formBx .inputBx .input-group {
     padding-left: 0;
     transition: left 0.3s ease-in-out;
   }
-    
+
   .sidebar-backdrop {
     display: none;
     position: fixed;
@@ -750,17 +774,17 @@ section.register .contentBx .formBx .inputBx .input-group {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 98; 
+    z-index: 98;
   }
 
-  .sidebar.open ~ .sidebar-backdrop {
+  .sidebar.open~.sidebar-backdrop {
     display: block;
   }
 
   .home-section {
     margin-left: 0;
   }
-  
+
   .sidebar-backdrop {
     position: fixed;
     top: 0;
@@ -773,7 +797,7 @@ section.register .contentBx .formBx .inputBx .input-group {
     z-index: 1;
   }
 
-  .sidebar.open + .sidebar-backdrop {
+  .sidebar.open+.sidebar-backdrop {
     display: block;
     transition: left 3s ease-in-out;
   }

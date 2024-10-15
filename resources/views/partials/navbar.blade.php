@@ -64,13 +64,26 @@
                         </form>
                     </li>
                     @endif
-                    <li class="dropdown mb-1" id="languageDropdown">
-                        <a class="dropdown-item dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-toggle="tooltip" data-bs-placement="left" title="@lang('navbar.Language')"><i class="bi bi-translate"></i> @lang('navbar.Language')</a>
-                        <ul class="dropdown-menu" aria-labelledby="languageDropdown">
-                            <li><a class="dropdown-item" href="{{ route('lang', 'en') }}"><i class="flag-icon flag-icon-us"></i> English</a></li>
-                            <li><a class="dropdown-item" href="{{ route('lang', 'id') }}"><i class="flag-icon flag-icon-id"></i> Bahasa Indonesia</a></li>
+                    <li>
+                        <a class="dropdown-item" href="#" title="@lang('navbar.Language')"><i class="bi bi-translate"></i> @lang('navbar.Language') &raquo; </a>
+                        <ul class="dropdown-menu dropdown-submenu dropdown-submenu-left">
+                            <li>
+                                <a class="dropdown-item" href="{{ route('lang', 'en') }}"><i class="flag-icon flag-icon-us"></i> English</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ route('lang', 'id') }}"><i class="flag-icon flag-icon-id"></i> Bahasa Indonesia</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ route('lang', 'es') }}"><i class="flag-icon flag-icon-es"></i> Español</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ route('lang', 'fr') }}"><i class="flag-icon flag-icon-fr"></i> Français</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="{{ route('lang', 'de') }}"><i class="flag-icon flag-icon-de"></i> Deutsch</a>
+                            </li>
                         </ul>
-                    </li>
+                      </li>
                     <li>
                         <form action="{{ route('logout') }}" method="POST">
                             @csrf

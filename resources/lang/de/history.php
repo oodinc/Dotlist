@@ -1,0 +1,22 @@
+<?php
+return [
+    'Task History' => 'Aufgabenverlauf', 
+    'task' => 'Aufgabe',
+    'event' => 'Ereignis',
+    'date' => 'Datum',
+    'time' => 'Zeit',
+    'action' => 'Aktion',
+    'Completed' => 'Abgeschlossen',
+    'Not Completed' => 'Nicht abgeschlossen',
+    'View' => 'Ansehen',
+    'Edit' => 'Bearbeiten',
+    'Delete' => 'Löschen',
+    'High' => 'Hoch',
+    'Medium' => 'Mittel',
+    'Low' => 'Niedrig',
+    'This page displays tasks that are scheduled for tomorrow and beyond' => 'Diese Seite zeigt Aufgaben, die für morgen und darüber hinaus geplant sind.',
+    'Are you sure you want to delete task' => 'Sind Sie sicher, dass Sie die Aufgabe löschen möchten?',
+    'This section displays tasks that were completed today' => 'Dieser Abschnitt zeigt Aufgaben, die heute abgeschlossen wurden.',
+    'This section displays tasks that are due today' => 'Dieser Abschnitt zeigt Aufgaben, die heute fällig sind.',
+    'This section displays tasks that were not completed and have passed their due date' => 'Dieser Abschnitt zeigt Aufgaben, die nicht abgeschlossen wurden und deren Fälligkeitsdatum überschritten ist.',
+];

@@ -1,0 +1,23 @@
+<?php
+return [
+    'Priority Tasks' => 'Tâches prioritaires',
+    'No priority tasks' => 'Aucune tâche prioritaire.',
+    'task' => 'Tâche',
+    'priority' => 'Priorité',
+    'status' => 'Statut',
+    'due_date' => 'Date d\'échéance',
+    'action' => 'Action',
+    'Completed' => 'Terminé',
+    'Not Completed' => 'Non terminé',
+    'View' => 'Voir',
+    'Edit' => 'Modifier',
+    'Delete' => 'Supprimer',
+    'High' => 'Élevé',
+    'Medium' => 'Moyen',
+    'Low' => 'Faible',
+    'This page displays tasks sorted by priority. All tasks are displayed on this page' => 'Cette page affiche les tâches triées par priorité. Toutes les tâches sont affichées sur cette page.',
+    'Are you sure you want to delete task' => 'Êtes-vous sûr de vouloir supprimer la tâche ?',
+    'This section displays tasks that were completed today' => 'Cette section affiche les tâches qui ont été terminées aujourd\'hui.',
+    'This section displays tasks that are due today' => 'Cette section affiche les tâches qui sont dues aujourd\'hui.',
+    'This section displays tasks that were not completed and have passed their due date' => 'Cette section affiche les tâches qui n\'ont pas été terminées et qui ont dépassé leur date d\'échéance.',
+];

@@ -148,19 +148,6 @@ setThemeBasedOnPage();
     setTheme(getPreferredTheme());
 })();
 
-// Language dropdown
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("languageDropdown").addEventListener("mouseenter", function () {
-        this.classList.add("show");
-        this.querySelector(".dropdown-menu").classList.add("show");
-    });
-
-    document.getElementById("languageDropdown").addEventListener("mouseleave", function () {
-        this.classList.remove("show");
-        this.querySelector(".dropdown-menu").classList.remove("show");
-    });
-});
-
 // toggle password
 function togglePasswordVisibility() {
     var passwordInput = document.getElementById("password");
