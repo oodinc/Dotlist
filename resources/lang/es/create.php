@@ -12,5 +12,6 @@ return [
     'Not Completed' => 'No Completado',
     'Completed' => 'Completado',
     'Status' => 'Estado',
+    'Home' => 'Inicio',
     'Save' => 'Guardar',
 ];

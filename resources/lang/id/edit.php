@@ -13,5 +13,6 @@ return [
     'Not Completed' => 'Belum Selesai',
     'Completed' => 'Selesai',
     'Status' => 'Status',
+    'Home' => 'Beranda',
     'Save' => 'Simpan',
 ];

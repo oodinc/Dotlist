@@ -52,8 +52,14 @@
                         </div>
 
                         <div class="text-end">
-                            <button type="submit" class="btn btn-primary"><i class="bi bi-save"></i> @lang('create.Save')</button>
+                            <a href="{{ route('tasks.index') }}" class="btn btn-sm btn-secondary me-2">
+                                <i class="bi bi-house"></i> @lang('create.Home')
+                            </a>
+                            <button type="submit" class="btn btn-sm btn-primary">
+                                <i class="bi bi-save"></i> @lang('create.Save')
+                            </button>
                         </div>
+                        
                     </form>
                 </div>
             </div>

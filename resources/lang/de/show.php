@@ -8,7 +8,7 @@ return [
     'High' => 'Hoch',
     'Priority' => 'Priorität',
     'Due Date' => 'Fälligkeitsdatum',
-    'Labels' => 'Labels',
+    'Labels' => 'Etiketten',
     'Not Completed' => 'Nicht abgeschlossen',
     'Completed' => 'Abgeschlossen',
     'Status' => 'Status',

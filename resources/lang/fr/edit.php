@@ -13,5 +13,6 @@ return [
     'Not Completed' => 'Non Terminé',
     'Completed' => 'Terminé',
     'Status' => 'Statut',
+    'Home' => 'Accueil',
     'Save' => 'Enregistrer',
 ];

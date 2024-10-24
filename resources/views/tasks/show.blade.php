@@ -27,6 +27,11 @@
                 </div>                
                 <div class="card-footer">
                     <div class="btn-group" role="group">
+                        <a href="{{ route('tasks.index') }}" class="btn btn-sm btn-secondary">
+                            <i class="bi bi-house"></i> @lang('create.Home')
+                        </a>
+                    </div>
+                    <div class="btn-group" role="group">
                         <a href="{{ route('tasks.edit', $task) }}" class="btn btn-sm btn-warning"><i class="bi bi-pencil"></i> Edit</a>
                     </div>
                     <div class="btn-group" role="group">
