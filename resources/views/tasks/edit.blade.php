@@ -27,6 +27,13 @@
                             <label for="description">@lang('edit.Description')</label>
                         </div>
                         <div class="form-floating mb-3">
+                            <select name="completed" id="completed" class="form-select">
+                                <option value="0" {{ $task->completed == 0 ? 'selected' : '' }}>@lang('edit.Not Completed')</option>
+                                <option value="1" {{ $task->completed == 1 ? 'selected' : '' }}>@lang('edit.Completed')</option>
+                            </select>
+                            <label for="completed">@lang('edit.Status')</label>
+                        </div>
+                        <div class="form-floating mb-3">
                             <select name="priority" id="priority" class="form-select">
                                 <option value="Low" {{ $task->priority == 'Low' ? 'selected' : '' }}>@lang('edit.Low')</option>
                                 <option value="Medium" {{ $task->priority == 'Medium' ? 'selected' : '' }}>@lang('edit.Medium')</option>
@@ -44,13 +51,6 @@
                         <div class="form-floating mb-3">
                             <input type="text" name="labels" id="labels" class="form-control" value="{{ $task->labels }}" placeholder="@lang('edit.Labels')" maxlength="14">
                             <label for="labels">@lang('edit.Labels')</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <select name="completed" id="completed" class="form-select">
-                                <option value="0" {{ $task->completed == 0 ? 'selected' : '' }}>@lang('edit.Not Completed')</option>
-                                <option value="1" {{ $task->completed == 1 ? 'selected' : '' }}>@lang('edit.Completed')</option>
-                            </select>
-                            <label for="completed">@lang('edit.Status')</label>
                         </div>
                         <div class="text-end">
                             <a href="{{ route('tasks.index') }}" class="btn btn-sm btn-secondary me-2">

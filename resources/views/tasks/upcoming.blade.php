@@ -42,19 +42,93 @@
                                         @endif
                                     </td>
                                     <td>
-                                        @if ($task->completed)
-                                            <span class="badge bg-success d-none d-md-inline" data-bs-toggle="tooltip" data-bs-placement="top" title="@lang('upcoming.Completed')">@lang('upcoming.Completed')</span>
-                                            <i class="bi bi-check-square-fill d-md-none text-success" data-bs-toggle="tooltip" data-bs-placement="top" title="@lang('upcoming.Completed')"></i>
-                                        @else
-                                            <span class="badge bg-danger d-none d-md-inline" data-bs-toggle="tooltip" data-bs-placement="top" title="@lang('upcoming.Not Completed')">@lang('upcoming.Not Completed')</span>
-                                            <i class="bi bi-x-square-fill d-md-none text-danger" data-bs-toggle="tooltip" data-bs-placement="top" title="@lang('upcoming.Not Completed')"></i>
-                                        @endif
+                                        <form action="{{ route('tasks.update', $task) }}" method="POST" class="d-inline">
+                                            @csrf
+                                            @method('PUT')
+                                            <select name="completed" class="form-select form-select-sm" style="max-width: 150px; display: inline;" onchange="this.form.submit()">
+                                                <option value="0" {{ !$task->completed ? 'selected' : '' }}>
+                                                    <span class="text-danger"><i class="bi bi-x-circle-fill"></i> @lang('index.Not Completed')</span>
+                                                </option>
+                                                <option value="1" {{ $task->completed ? 'selected' : '' }}>
+                                                    <span class="text-success"><i class="bi bi-check-circle-fill"></i> @lang('index.Completed')</span>
+                                                </option>
+                                            </select>
+                                        </form>
                                     </td>
                                     <td>
-                                        <a href="{{ route('tasks.show', $task) }}" class="btn btn-info btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="@lang('upcoming.View')">
-                                            <span class="d-none d-md-inline"><i class="bi bi-eye"></i> @lang('upcoming.View')</span> <!-- Icon for larger screens -->
+                                        <button type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#taskModal-{{ $task->id }}" data-bs-toggle="tooltip" data-bs-placement="top" title="@lang('index.View')">
+                                            <span class="d-none d-md-inline"><i class="bi bi-eye"></i> @lang('index.View')</span> <!-- Icon for larger screens -->
                                             <i class="bi bi-eye d-md-none"></i> <!-- Icon for smaller screens -->
-                                        </a>
+                                        </button>
+                                        
+                                        <div class="modal fade" id="taskModal-{{ $task->id }}" tabindex="-1" aria-labelledby="taskModalLabel-{{ $task->id }}" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered modal-lg"> <!-- Added modal-dialog-centered here -->
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="taskModalLabel-{{ $task->id }}">{{ $task->title }}</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <h5 class="card-title">Task Details</h5>
+                                                                <table class="table table-borderless text-start">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td class="ps-4"><strong>Description</strong></td>
+                                                                            <td>:</td>
+                                                                            <td>{{ $task->description ?: '~' }}</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="ps-4"><i class="bi bi-calendar2-check"></i> <strong>Due Date</strong></td>
+                                                                            <td>:</td>
+                                                                            <td>{{ Carbon\Carbon::parse($task->due_date)->format('d-m-Y ~ H:i') }}</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="ps-4"><i class="bi bi-exclamation-square"></i> <strong>Priority</strong></td>
+                                                                            <td>:</td>
+                                                                            <td>
+                                                                                <span class="badge {{ $task->priority == 'High' ? 'bg-danger' : ($task->priority == 'Medium' ? 'bg-warning' : 'bg-success') }}">
+                                                                                    {{ $task->priority }}
+                                                                                </span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="ps-4"><i class="bi bi-tags"></i> <strong>Labels</strong></td>
+                                                                            <td>:</td>
+                                                                            <td>{{ $task->labels ?: 'No labels assigned' }}</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="ps-4"><i class="bi bi-check2-circle"></i> <strong>Status</strong></td>
+                                                                            <td>:</td>
+                                                                            <td>
+                                                                                <span class="badge {{ $task->completed ? 'bg-success' : 'bg-danger' }}">
+                                                                                    {{ $task->completed ? 'Completed' : 'Not completed' }}
+                                                                                </span>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="ps-4"><i class="bi bi-clock"></i> <strong>Created at</strong></td>
+                                                                            <td>:</td>
+                                                                            <td>{{ $task->created_at->timezone('Asia/Jakarta')->format('l, d M Y H:i') }}</td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td class="ps-4"><i class="bi bi-clock"></i> <strong>Updated at</strong></td>
+                                                                            <td>:</td>
+                                                                            <td>{{ $task->updated_at->timezone('Asia/Jakarta')->format('l, d M Y H:i') }}</td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
                                         <a href="{{ route('tasks.edit', $task) }}" class="btn btn-warning btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="@lang('upcoming.Edit')">
                                             <span class="d-none d-md-inline"><i class="bi bi-pencil"></i> @lang('upcoming.Edit')</span> <!-- Icon for larger screens -->
                                             <i class="bi bi-pencil d-md-none"></i> <!-- Icon for smaller screens -->

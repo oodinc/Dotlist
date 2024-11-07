@@ -27,19 +27,88 @@
                                                     <tr>
                                                         <td>{{ $task->title }}</td>
                                                         <td class="d-flex justify-content-end">
-                                                            <a href="{{ route('tasks.show', $task) }}" class="btn btn-info btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="@lang('priority.View')">
-                                                                <span class="d-none d-md-inline"><i class="bi bi-eye"></i> @lang('priority.View')</span> <!-- Icon for larger screens -->
+                                                            <button type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#taskModal-{{ $task->id }}" data-bs-toggle="tooltip" data-bs-placement="top" title="@lang('index.View')">
+                                                                <span class="d-none d-md-inline"><i class="bi bi-eye"></i> @lang('index.View')</span> <!-- Icon for larger screens -->
                                                                 <i class="bi bi-eye d-md-none"></i> <!-- Icon for smaller screens -->
-                                                            </a>
-                                                            <a href="{{ route('tasks.edit', $task) }}" class="btn btn-warning btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="@lang('priority.Edit')">
-                                                                <span class="d-none d-md-inline"><i class="bi bi-pencil"></i> @lang('priority.Edit')</span> <!-- Icon for larger screens -->
+                                                            </button>
+                                                            
+                                                            <div class="modal fade" id="taskModal-{{ $task->id }}" tabindex="-1" aria-labelledby="taskModalLabel-{{ $task->id }}" aria-hidden="true">
+                                                                <div class="modal-dialog modal-dialog-centered modal-lg"> <!-- Added modal-dialog-centered here -->
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title" id="taskModalLabel-{{ $task->id }}">{{ $task->title }}</h5>
+                                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            <div class="card">
+                                                                                <div class="card-body">
+                                                                                    <h5 class="card-title">Task Details</h5>
+                                                                                    <table class="table table-borderless text-start">
+                                                                                        <tbody>
+                                                                                            <tr>
+                                                                                                <td class="ps-4"><strong>Description</strong></td>
+                                                                                                <td>:</td>
+                                                                                                <td>{{ $task->description ?: '~' }}</td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td class="ps-4"><i class="bi bi-calendar2-check"></i> <strong>Due Date</strong></td>
+                                                                                                <td>:</td>
+                                                                                                <td>{{ Carbon\Carbon::parse($task->due_date)->format('d-m-Y ~ H:i') }}</td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td class="ps-4"><i class="bi bi-exclamation-square"></i> <strong>Priority</strong></td>
+                                                                                                <td>:</td>
+                                                                                                <td>
+                                                                                                    <span class="badge {{ $task->priority == 'High' ? 'bg-danger' : ($task->priority == 'Medium' ? 'bg-warning' : 'bg-success') }}">
+                                                                                                        {{ $task->priority }}
+                                                                                                    </span>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td class="ps-4"><i class="bi bi-tags"></i> <strong>Labels</strong></td>
+                                                                                                <td>:</td>
+                                                                                                <td>{{ $task->labels ?: 'No labels assigned' }}</td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td class="ps-4"><i class="bi bi-check2-circle"></i> <strong>Status</strong></td>
+                                                                                                <td>:</td>
+                                                                                                <td>
+                                                                                                    <span class="badge {{ $task->completed ? 'bg-success' : 'bg-danger' }}">
+                                                                                                        {{ $task->completed ? 'Completed' : 'Not completed' }}
+                                                                                                    </span>
+                                                                                                </td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td class="ps-4"><i class="bi bi-clock"></i> <strong>Created at</strong></td>
+                                                                                                <td>:</td>
+                                                                                                <td>{{ $task->created_at->timezone('Asia/Jakarta')->format('l, d M Y H:i') }}</td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <td class="ps-4"><i class="bi bi-clock"></i> <strong>Updated at</strong></td>
+                                                                                                <td>:</td>
+                                                                                                <td>{{ $task->updated_at->timezone('Asia/Jakarta')->format('l, d M Y H:i') }}</td>
+                                                                                            </tr>
+                                                                                        </tbody>
+                                                                                    </table>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <a href="{{ route('tasks.edit', $task) }}" class="btn btn-warning btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="@lang('index.Edit')">
+                                                                <span class="d-none d-md-inline"><i class="bi bi-pencil"></i> @lang('index.Edit')</span> <!-- Icon for larger screens -->
                                                                 <i class="bi bi-pencil d-md-none"></i> <!-- Icon for smaller screens -->
                                                             </a>
                                                             <form id="delete-form-{{ $task->id }}" action="{{ route('tasks.destroy', $task) }}" method="POST" data-title="{{ $task->title }}" style="display: inline-block;">
                                                                 @csrf
                                                                 @method('DELETE')
-                                                                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-placement="top" title="@lang('priority.Delete')" data-bs-target="#confirmDeleteModal-{{ $task->id }}">
-                                                                    <span class="d-none d-md-inline"><i class="bi bi-trash"></i> @lang('priority.Delete')</span> <!-- Icon for larger screens -->
+                                                                <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-placement="top" title="@lang('index.Delete')" data-bs-target="#confirmDeleteModal-{{ $task->id }}">
+                                                                    <span class="d-none d-md-inline"><i class="bi bi-trash"></i> @lang('index.Delete')</span> <!-- Icon for larger screens -->
                                                                     <i class="bi bi-trash-fill d-md-none"></i> <!-- Icon for smaller screens -->
                                                                 </button>
                                                                 
@@ -48,15 +117,15 @@
                                                                     <div class="modal-dialog">
                                                                         <div class="modal-content">
                                                                             <div class="modal-header">
-                                                                                <h5 class="modal-title" id="confirmDeleteModalLabel-{{ $task->id }}">@lang('priority.Confirm Delete')</h5>
+                                                                                <h5 class="modal-title" id="confirmDeleteModalLabel-{{ $task->id }}">Confirm Delete</h5>
                                                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                                             </div>
                                                                             <div class="modal-body">
-                                                                                @lang('priority.Are you sure you want to delete task') "{{ $task->title }}"?
+                                                                                @lang('index.Are you sure you want to delete task') "{{ $task->title }}"?
                                                                             </div>
                                                                             <div class="modal-footer">
-                                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">@lang('priority.Cancel')</button>
-                                                                                <button type="submit" class="btn btn-danger">@lang('priority.Delete')</button>
+                                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                                                                                <button type="submit" class="btn btn-danger">Delete</button>
                                                                             </div>
                                                                         </div>
                                                                     </div>
