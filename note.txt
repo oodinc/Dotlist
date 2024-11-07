@@ -1,5 +1,0 @@
-- Scheduled Tasks
-- Multi Language
-- Multi Time
-- Auth with facebook
-- Integration google calendar
