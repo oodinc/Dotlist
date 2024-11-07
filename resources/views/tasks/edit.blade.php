@@ -14,7 +14,7 @@
                         @method('PUT')
                         <input type="hidden" name="previous_url" value="{{ URL::previous() }}">
                         <div class="form-floating mb-3">
-                            <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" value="{{ $task->title }}" placeholder="@lang('edit.Task Title')" required maxlength="14">
+                            <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" value="{{ $task->title }}" placeholder="@lang('edit.Task Title')" required>
                             <label for="title">@lang('edit.Task Name')</label>
                             @error('title')
                                 <span class="invalid-feedback" role="alert">
@@ -49,7 +49,7 @@
                             <label for="due_date">@lang('edit.Due Date')</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input type="text" name="labels" id="labels" class="form-control" value="{{ $task->labels }}" placeholder="@lang('edit.Labels')" maxlength="14">
+                            <input type="text" name="labels" id="labels" class="form-control" value="{{ $task->labels }}" placeholder="@lang('edit.Labels')">
                             <label for="labels">@lang('edit.Labels')</label>
                         </div>
                         <div class="text-end">

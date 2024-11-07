@@ -12,7 +12,7 @@
                     <form action="{{ route('tasks.store') }}" method="POST">
                         @csrf
                         <div class="form-floating mb-3">
-                            <input type="text" name="title" id="title" class="form-control" placeholder="@lang('create.Task Name')" required maxlength="14">
+                            <input type="text" name="title" id="title" class="form-control" placeholder="@lang('create.Task Name')" required>
                             <label for="title">@lang('create.Task Name')</label>
                         </div>
 
@@ -39,7 +39,7 @@
                         </div>
                         
                         <div class="form-floating mb-3">
-                            <input type="text" name="labels" id="labels" class="form-control" placeholder="@lang('create.Labels')" maxlength="14">
+                            <input type="text" name="labels" id="labels" class="form-control" placeholder="@lang('create.Labels')">
                             <label for="labels">@lang('create.Labels')</label>
                         </div>
                         
