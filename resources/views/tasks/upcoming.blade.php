@@ -27,7 +27,7 @@
                         <tbody>
                             @forelse ($upcomingTasks as $task)
                                 <tr>
-                                    <td>{{ $task->title }}</td>
+                                    <td>{{ Str::limit($task->title, 12, '...') }}</td>
                                     <td>{{ Carbon\Carbon::parse($task->due_date)->format('d-m-Y ~ H:i') }}</td>
                                     <td>
                                         @if ($task->priority == 'High')

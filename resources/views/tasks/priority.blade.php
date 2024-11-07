@@ -27,7 +27,7 @@
                             <tbody>
                                 @forelse ($tasks as $task)
                                     <tr>
-                                        <td>{{ $task->title }}</td>
+                                        <td>{{ Str::limit($task->title, 12, '...') }}</td>
                                         <td>
                                             @if ($task->priority == 'High')
                                                 <span class="badge bg-danger d-none d-md-inline" data-bs-toggle="tooltip" data-bs-placement="top" title="@lang('priority.High')">@lang('priority.High')</span>

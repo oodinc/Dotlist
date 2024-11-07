@@ -24,16 +24,13 @@ class TaskController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $data['labels'] = ucwords(strtolower($data['labels']));
-        $data['title'] = substr($data['title'], 0, 14);
-        $data['labels'] = substr($data['labels'], 0, 14);
+        $data['labels'] = ucwords($data['labels']);
 
         $task = new Task($data);
-        $task->user_id = Auth::id(); // Set the user_id to the logged-in user's ID
-        $task->order = Task::max('order') + 1; // Use the highest value + 1
+        $task->user_id = Auth::id();
+        $task->order = Task::max('order') + 1;
         $task->save();
 
-        // Add event for task creation
         $event = 'Task created with title "' . $task->title . '".';
         $user = Auth::user();
         TaskHistory::create([

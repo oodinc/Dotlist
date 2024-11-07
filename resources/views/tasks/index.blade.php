@@ -27,7 +27,7 @@
                             <tbody class="sortable">
                                 @forelse ($tasks as $task)
                                 <tr data-task-id="{{ $task->id }}">
-                                    <td>{{ $task->title }}</td>
+                                    <td>{{ Str::limit($task->title, 12, '...') }}</td>
                                     <td>
                                         <form action="{{ route('tasks.update', $task) }}" method="POST" class="d-inline">
                                             @csrf
@@ -185,7 +185,7 @@
                             <tbody>
                                 @forelse ($completed as $task)
                                     <tr data-task-id="{{ $task->id }}">
-                                        <td>{{ $task->title }}</td>
+                                        <td>{{ Str::limit($task->title, 12, '...') }}</td>
                                         <td>
                                             <form action="{{ route('tasks.update', $task) }}" method="POST" class="d-inline">
                                                 @csrf
@@ -339,7 +339,7 @@
                             <tbody>
                                 @forelse ($overdueTasks as $task)
                                     <tr data-task-id="{{ $task->id }}">
-                                        <td>{{ $task->title }}</td>
+                                        <td>{{ Str::limit($task->title, 12, '...') }}</td>
                                         <td>
                                             <form action="{{ route('tasks.update', $task) }}" method="POST" class="d-inline">
                                                 @csrf

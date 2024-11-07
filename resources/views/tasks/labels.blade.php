@@ -17,7 +17,7 @@
                         <div class="col-12 col-md-6">
                             <div class="card mb-3 shadow-sm my-2">
                                 <div class="card-header bg-primary text-white">
-                                    <h5 class="mb-0">{{ $label }}</h5>
+                                    <h5 class="mb-0">{{ Str::limit($label, 12, '...') }}</h5>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
@@ -25,7 +25,7 @@
                                             <tbody>
                                                 @foreach ($tasks as $task)
                                                     <tr>
-                                                        <td>{{ $task->title }}</td>
+                                                        <td>{{ Str::limit($task->title, 12, '...') }}</td>
                                                         <td class="d-flex justify-content-end">
                                                             <button type="button" class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#taskModal-{{ $task->id }}" data-bs-toggle="tooltip" data-bs-placement="top" title="@lang('index.View')">
                                                                 <span class="d-none d-md-inline"><i class="bi bi-eye"></i> @lang('index.View')</span> <!-- Icon for larger screens -->
